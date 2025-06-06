@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eden International School & College</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px 0;
+    }
+    header h1 {
+      margin: 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 10px 0 0 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #hero {
+      background: #e0f7fa;
+      padding: 60px 0;
+      text-align: center;
+    }
+    section {
+      padding: 40px 0;
+    }
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Eden International School & College</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#admission">Admission</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <h2>Welcome to Eden International School & College</h2>
+      <p>Where education meets excellence.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Eden International School & College is committed to nurturing learners with values, creativity, and a global vision. We focus on academic excellence and holistic development.</p>
+    </div>
+  </section>
+
+  <section id="academics">
+    <div class="container">
+      <h2>Academics</h2>
+      <ul>
+        <li>Play to Class 12</li>
+        <li>National Curriculum</li>
+        <li>Interactive Teaching Methods</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="admission">
+    <div class="container">
+      <h2>Admission</h2>
+      <p>Admission is open for Play Group to Class 12. Please contact us for detailed requirements and dates.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: info@eden.edu.bd</p>
+      <p>Phone: +8801XXXXXXXXX</p>
+      <p>Address: Eden Road, Dhaka, Bangladesh</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Eden International School & College. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
