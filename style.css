@@ -1,0 +1,1248 @@
+/* 🔵 Reset এবং ফন্ট */
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 🔷 উপরের বার */
+.top-bar {
+  background-color: #003366;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+  font-size: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-bar div {
+  margin: 5px 0;
+}
+
+.app-btn {
+  background-color: #ff3c3c;
+  color: white;
+  padding: 6px 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* 🏫 হেডার মেইন অংশ */
+.header-main {
+  background-color: #3366ff;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.school-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.school-info h1 {
+  margin: 10px 0 5px;
+  font-size: 28px;
+}
+
+.school-info p {
+  margin: 0;
+  font-size: 16px;
+}
+
+
+/* 🧭 মেনুবার */
+.main-menu {
+  background-color: #3366ff; /* আগের মতোই নীল রং */
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* নিচে হালকা ছায়া */
+  font-weight: bold; /* লেখা বোল্ড */
+  font-family: "Segoe UI", sans-serif;
+}
+
+.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-menu li {
+  padding: 14px 22px;
+  color: #0066cc;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.3s ease;
+  border-radius: 6px; /* নরম কোনা */
+  margin: 4px;
+  font-size: 16px;
+
+}
+
+.main-menu li:hover {
+  background-color: #07328f;
+  transform: scale(1.05); /* হালকা জুম ইন */
+}
+
+/* 🔷 আকর্ষণীয় ফ্লোয়িং লেখা স্টাইল */
+.fancy-marquee {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: white;
+  color: #d90000;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 0;
+  border-top: 3px solid #3366ff;
+  border-bottom: 3px solid #3366ff;
+  box-shadow: inset 0 -2px 5px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.fancy-marquee::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, transparent 0%, #f0f0f0 50%, transparent 100%);
+  animation: shine 3s infinite;
+  z-index: 1;
+}
+
+.fancy-marquee span,
+.fancy-marquee a {
+  position: relative;
+  z-index: 2;
+}
+
+.fancy-marquee a {
+  color: #07328f;
+  text-decoration: underline;
+}
+
+.fancy-marquee span {
+  display: inline-block;
+  animation: marqueeMove 15s linear infinite;
+}
+
+/* এনিমেশন কীগুলি */
+@keyframes marqueeMove {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes shine {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+
+
+/* ভাসমান লেখা দেখাবে */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: green;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #ff4b2b;
+  padding: 10px 0;
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeAnim 20s linear infinite;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ff4b2b;
+}
+
+.marquee a {
+  color: #ff4b2b;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.marquee a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.marquee span {
+  color: #ff6f61;
+  user-select: none;
+  padding: 0 10px;
+}
+
+/* মুভমেন্ট এনিমেশন */
+@keyframes marqueeAnim {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+/*ছবিগুলো একটু পরপর দেখাবেন ২টি করে */
+.slideshow-box {
+  width: 80%;
+  height: 300px;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid #ff4b2b;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 75, 43, 0.6);
+  background-color: #fff;
+}
+
+/* স্লাইড ট্র্যাক */
+.slideshow-track {
+  position: relative;
+  height: 100%;
+}
+
+/* প্রতিটি স্লাইড */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slide img {
+  width: 45%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Slide show animation */
+@keyframes fadeSlides {
+  0% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.slide:nth-child(1) {
+  animation: fadeSlides 16s infinite;
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation: fadeSlides 16s infinite;
+  animation-delay: 4s;
+}
+.slide:nth-child(3) {
+  animation: fadeSlides 16s infinite;
+  animation-delay: 8s;
+}
+.slide:nth-child(4) {
+  animation: fadeSlides 16s infinite;
+  animation-delay: 12s;
+}
+
+/* ← ও → বোতাম (নেভিগেশন অ্যারো) */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff4b2b;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #ff4b2b;
+  border-radius: 50%;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.arrow:hover {
+  background-color: #ff4b2b;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* বাম পাশে ← */
+.arrow-left {
+  left: 15px;
+}
+
+/* ডান পাশে → */
+.arrow-right {
+  right: 15px;
+}
+
+
+
+
+
+
+
+/*Governing,Principle and Notice board */
+.home-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center; /* মাঝখানে রাখে */
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+  border-radius: 10%;
+}
+
+/* প্রতিটি কার্ড */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1 1 28%; /* ছোট আকারে */
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 480px; /* সব কার্ডের উচ্চতা সমান রাখতে */
+}
+
+/* হোভার ইফেক্ট */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* প্রোফাইল ছবি */
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* শিরোনাম */
+.card-title {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: #3366ff;
+}
+
+/* নাম এবং বিবরণ */
+.card h4 {
+  text-align: center;
+  margin: 10px 0 5px;
+}
+.card p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* read-more বাটন */
+.read-more {
+  display: inline-block;
+  margin-top: auto;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3366ff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.read-more:hover {
+  background-color: #e03d22;
+}
+
+/* নোটিশ বাটনের ডিজাইন */
+.notice-button {
+  display: inline-block;
+  background-color: #3366ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.notice-button:hover {
+  background-color: #e03d22;
+}
+
+/* মোবাইলে রেসপনসিভ */
+@media (max-width: 900px) {
+  .card {
+    flex: 1 1 45%;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+
+/*ABout & News Event */
+/* --------------------------------------------------------
+   Container: About & News side-by-side
+--------------------------------------------------------- */
+.about-news-section {
+  display: flex;
+  justify-content: space-between;
+  gap: auto;
+  overflow: hidden;
+  padding: 20px 20px;
+  max-width: 1100px;        /* পুরো কন্টেন্টের সর্বোচ্চ প্রস্থ */
+  margin: 0 auto;           /* অবস্থান কেন্দ্রস্থ করার জন্য */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+/* উভয় কলাম (বাম ও ডান) এর সাধারণ স্টাইল */
+.about-school{
+  flex: 0 0 40%;       /* প্রস্থ 40% রাখবে */
+  box-sizing: border-box;
+}
+
+.news-events {
+  flex: 1;
+  background-color: #fff;
+  padding: 0;
+  border-radius: 15px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.08);
+}
+
+.about-school h2,
+.news-events h2 {
+  font-size: 22px;
+  color: #1a1a1a;
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.read-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.read-more-button:hover {
+  background-color: #005fa3;
+}
+
+
+/* --------------------------------------------------------
+   News Ticker: বক্সের মধ্যে স্ক্রলিং টেক্সট
+--------------------------------------------------------- */
+.news-ticker-container {
+  position: relative;
+  overflow: hidden;       /* বক্সের বাইরে থাকা অংশ লুকাবে */
+  height: 40px;           /* নির্দিষ্ট হাইট */
+  background-color: #005fa3; /* বক্সের ব্যাকগ্রাউন্ড কালো */
+  border-radius: 15px;
+}
+
+/* Track পুরো বক্সের উচ্চতা ১০০% নেয় এবং ভিসিএস করে */
+.news-ticker-track {
+  display: flex;
+  align-items: center;    /* ভেসিক্যাল সেন্টারিং */
+  height: 100%;           /* প্যারেন্ট (40px) উচ্চতা অনুসারে */
+  animation: scrollNews 70s linear infinite;
+}
+
+/* Items: span গুলোকে পাশাপাশি রাখতে হবে */
+.news-ticker-items {
+  display: flex;
+}
+
+/* প্রতিটি span দিব্যি বক্সের মাঝখানে সেন্টারেড থাকবে */
+.news-ticker-items span {
+  display: flex;
+  align-items: center;    /* ভিসিএস */
+  justify-content: center;/* হারাইজন্টাল সেন্টার (যদি প্রয়োজন) */
+  white-space: nowrap;
+  padding: 0 40px;        /* দুই পাশে প্যাডিং */
+  height: 100%;           /* প্যারেন্ট উচ্চতা অনুসারে (40px) */
+  color:black;
+  font-size: 16px;
+}
+
+/* স্ক্রলিং অ্যানিমেশন */
+@keyframes scrollNews {
+  0% {
+    transform: translateX(0%);  /* শুরুতেই ডান পাশ থেকে ভেসে আসবে */
+  }
+  100% {
+    transform: translateX(-50%); /* শেষে বাম পাশ পর্যন্ত যাবে */
+  }
+}
+
+/* --------------------------------------------------------
+   Responsive: মোবাইল ভিউ
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+  .about-news-section {
+    flex-direction: column; /* কলামগুলো একটার নিচে আরেকটা */
+  }
+
+  .about-school,
+  .news-events {
+    width: 100%;
+  }
+
+  /* মোবাইলে প্যাডিং কমিয়ে নিতে পারেন যদি চান */
+  .about-school,
+  .news-events {
+    padding: 20px;
+  }
+
+  .news-ticker-items span {
+    padding: 0 20px;      /* প্যাডিং অল্প করে দেওয়া হয়েছে */
+    font-size: 14px;      /* ফন্ট সাইজ সামান্য ছোট */
+  }
+}
+
+
+
+
+
+
+/*Assistent Teacher List Design */
+.section-heading {
+  text-align: center;
+  border-radius: 10px;
+  padding: 0px 0px;
+  text-align: center;
+  width: 100%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.section-heading h2 {
+  font-size: 2em;
+  color: black;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background-color: #0066cc;
+}
+
+.section-heading p {
+  font-size: 1em;
+  color: black;
+}
+
+/* Grid layout for teacher cards */
+.assistant-teacher-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.teacher-card {
+  text-align: center;
+}
+.teacher-card img {
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
+  border-radius: 10%; /* এই লাইনটি মুছে দিন বা নিচের মত করে দিন */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.teacher-card h3 {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #333;
+  border-radius: 10%;
+}
+.teacher-card:hover img {
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* 🌐 Calendar & Hotline Layout Styling */
+
+/* Main flex container for calendar and hotline sections */
+.wide-container {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 🔵 Section title/header (used for both calendar and hotline) */
+.section-header {
+  background-color: #3f51b5;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 20px;
+  background-color: #3f51b5;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* 📅 Calendar box styling */
+.calendar-section {
+  flex: 2; /* Takes more width than hotline */
+  background-color: white;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* 📞 Hotline box styling */
+.hotline-section {
+  flex: 1; /* Smaller width */
+  background-color: white;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* 📋 Hotline list basic reset */
+.hotline-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🔗 Individual hotline item */
+.hotline-section li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 16px; /* একটু ছোট করে দেওয়া হলো */
+}
+
+/* 🖼️ Hotline icon/image styling */
+.hotline-section img {
+  width: 60px;        /* বড় করে স্পষ্ট করার জন্য */
+  height: 60px;
+  margin-right: 12px;
+  object-fit: contain; /* ছবির প্রোপারশন ঠিক রাখতে */
+}
+
+/* 📱 Mobile layout fix: stack calendar and hotline vertically on small screens */
+@media (max-width: 768px) {
+  .wide-container {
+    flex-direction: column;
+  }
+
+  .calendar-section,
+  .hotline-section {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+/* why-  IESC  is best- */
+.why-best-section {
+  background-color: #f0f8ff;
+  padding: 0px 0px;
+  text-align: center;
+}
+
+.why-best-title {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #0066cc;
+  border-radius: 10px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  color: #34495e;
+  margin-top: 0;
+}
+
+
+
+/* gallery-photo  section */
+.gallery-section {
+  background-color: white;
+  padding: 0px;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 32px;
+  color: black;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #0066cc;
+  border-radius: 10px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-photo {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-photo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-photo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+/*This is Tour & Picnic Spot Section*/
+.video-gallery-section {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.video-gallery-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Flex container */
+.video-gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Each video thumbnail */
+.youtube-thumbnail {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.youtube-thumbnail h3 {
+  font-size: 16px;
+  color: #0077cc;
+  margin-bottom: 10px;
+}
+
+.youtube-thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.youtube-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.youtube-thumbnail img:hover {
+  transform: scale(1.03);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .youtube-thumbnail {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+
+
+
+
+/*Tutorial Class video */
+/* Main section styling */
+.online-class-section {
+  padding: 40px 20px;
+  background-color: #f8f8ff;
+  text-align: center;
+}
+
+/* Section title */
+.gallery-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Container for all videos */
+.video-gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* YouTube thumbnail style */
+.youtube-thumbnail {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.youtube-thumbnail h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+.youtube-thumbnail img {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.youtube-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* For iframe video playlist styling */
+.video-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 360px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.video-item h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #28a745;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 6px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .youtube-thumbnail, .video-item {
+    width: 90%;
+  }
+}
+
+
+/*Map Design*/
+/* ----------- Map Section Styling ----------- */
+.map-section {
+  padding: 0px 0px;
+  background-color: #f5faff;
+  text-align: center;
+  width: 100%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+/* ----------- Title Styling ----------- */
+.map-title {
+  font-size: 32px;
+  color:black;
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  background-color: #0066cc;
+}
+
+.map-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #3498db;
+  border-radius: 2px;
+}
+
+/* ----------- Map Wrapper ----------- */
+.map-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* ----------- Embedded Google Map ----------- */
+.map-wrapper iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+/* ----------- Footer Link Below Map ----------- */
+.map-footer {
+  padding: 15px;
+  background-color: #eaf4ff;
+}
+
+.map-footer a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.map-footer a:hover {
+  color: #0056b3;
+}
+
+
+
+
+/* Contact Section Styling */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f2f8ff;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-heading {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #083d77;
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Contact container layout */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Info side */
+.contact-info {
+  flex: 1 1 300px;
+  background-color: #e6f0ff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.contact-info h3 {
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Form side */
+.contact-form {
+  flex: 1 1 300px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* 🌍 Footer Design */
+.site-footer {
+  background-color: #0a742c;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+/* বাম পাশ */
+.footer-left {
+  flex: 1 1 300px;
+}
+
+.footer-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.footer-left p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.footer-left i {
+  margin-right: 8px;
+  color: #ffd700;
+}
+
+/* ডান পাশ */
+.footer-right {
+  flex: 1 1 300px;
+}
+
+.footer-right h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right ul li {
+  margin-bottom: 10px;
+}
+
+.footer-right ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-right ul li a:hover {
+  color: #ffd700;
+}
+
+/* নিচের কপিরাইট অংশ */
+.footer-bottom {
+  background-color: #056c26; /* ডার্ক গ্রীন ব্যাকগ্রাউন্ড */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  flex-wrap: wrap; /* মোবাইল ডিভাইসের জন্য */
+  font-size: 14px;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-right a {
+  color: #ddd;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #fff;
+}
+
+/* রেসপনসিভ জন্য */
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    margin-top: 10px;
+  }
+
+  .footer-right a {
+    margin: 0 10px;
+  }
+}
+
